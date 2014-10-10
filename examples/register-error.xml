@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope
+        xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <soap:Body>
+                <RegisterClient2Response xmlns="http://www.hp.com/isee/webservices/">
+                        <RegisterClient2Result>
+                                <IsSuccess>false</IsSuccess>
+                                <Error> 
+                                        <Code>100</Code>
+                                        <IsTransientError>false</IsTransientError>
+                                        <IsClientError>true</IsClientError>
+                                        <IsReRegisterError>false</IsReRegisterError>
+                                        <Message>Failed to get GDID!</Message>
+                                </Error>
+                                <BackoffMultiplier>1</BackoffMultiplier>
+                        </RegisterClient2Result>
+                </RegisterClient2Response>
+        </soap:Body>
+</soap:Envelope>

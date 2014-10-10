@@ -1,0 +1,9 @@
+<SOAP-ENV:Envelope
+    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:iseeReg="http://www.hp.com/isee/webservices/">
+  <SOAP-ENV:Body>
+    <iseeReg:RegisterClient2>
+      <iseeReg:request/>
+    </iseeReg:RegisterClient2>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

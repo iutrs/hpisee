@@ -1,0 +1,16 @@
+Simple proof of concept implementation of an HP ISEE (Instant Support
+Enterprise Edition) client. It supports client registration and
+entitlement/warranty lookup.
+
+Usage:   $0 serial,prod,[country] [serial,prod,[country] ...]
+Example: $0 CZ10130050,519841-425,ES
+
+The client looks for API auth data in ~/.hpiseeauth. If it's not
+found, it registers with the API and stores the credentials in
+~/.hpiseeauth for later use and then runs the warranty lookup.
+
+OCDnix 2013
+rot13(bpqavk_lnubb.pbz)
+http://ocdnix.wordpress.com/
+
+Repushed on github by moobyfr

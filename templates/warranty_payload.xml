@@ -1,0 +1,4 @@
+<isee:ISEE-GetOOSEntitlementInfoRequest
+    xmlns:isee="http://www.hp.com/schemas/isee/5.00/entitlement"
+    schemaVersion="5.00">
+</isee:ISEE-GetOOSEntitlementInfoRequest>

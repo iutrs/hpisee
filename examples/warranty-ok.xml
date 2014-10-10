@@ -1,0 +1,163 @@
+<ns1:ISEE-GetOOSEntitlementInfoResponse xmlns:ns1="http://www.hp.com/schemas/isee/5.00/entitlement" schemaVersion="5.00">
+  <Data frame="0" serialNumber="CZ10130050">
+    <EsReply xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="EsReply">
+      <EsHeader>
+        <InputRequest>
+          <Operation>getEntitlementBySn</Operation>
+          <ClientAppID>ISEE</ClientAppID>
+          <EntitlementBySnRequest>
+            <IncludeAddresses>false</IncludeAddresses>
+            <IncludeOffers>true</IncludeOffers>
+            <IncludeDeliverables>true</IncludeDeliverables>
+            <IncludeModifiers>true</IncludeModifiers>
+            <EntitlementCheckDate>2013-03-13</EntitlementCheckDate>
+            <IsoCountryCd>ES</IsoCountryCd>
+            <IncludeWarranty>true</IncludeWarranty>
+            <IncludeContracts>true</IncludeContracts>
+            <SerialNumber>CZ10130050</SerialNumber>
+            <ProductID>519841-425</ProductID>
+          </EntitlementBySnRequest>
+        </InputRequest>
+        <TransactionID>3350669740</TransactionID>
+      </EsHeader>
+      <CombinedUnitEntitlement>
+        <ActiveWarrantyEntitlement>true</ActiveWarrantyEntitlement>
+        <OverallWarrantyStartDate>2010-04-07</OverallWarrantyStartDate>
+        <OverallWarrantyEndDate>2013-05-06</OverallWarrantyEndDate>
+        <ActiveContractEntitlement>false</ActiveContractEntitlement>
+        <OOS id="ID_2227613_1">
+          <OOSKey>430967328</OOSKey>
+          <OOSType>HW</OOSType>
+          <SerialNumber>CZ10130050</SerialNumber>
+          <SalesOrderNumber>70U814415005</SalesOrderNumber>
+          <ShipToCountry>ES</ShipToCountry>
+          <ShipFromCountry>ES</ShipFromCountry>
+          <OMSystemDesc>Fusion EMEA - DELVRY03</OMSystemDesc>
+          <SalesChannel>IR</SalesChannel>
+          <Product>
+            <ProductID>519841-425</ProductID>
+            <ProductDescription>HP DL320 G6 E5502 SATA EU Svr/TV</ProductDescription>
+            <ProductLineCode>LA</ProductLineCode>
+            <ProductLineDescription>100 Ser Sys &amp; Access</ProductLineDescription>
+          </Product>
+        </OOS>
+        <Warranty>
+          <WarrantyType>FR</WarrantyType>
+          <TermCode>A015</TermCode>
+          <PortfolioFlag>G</PortfolioFlag>
+          <WarrantyDeterminationCode>26</WarrantyDeterminationCode>
+          <WarrantyDeterminationDescription>Ship date</WarrantyDeterminationDescription>
+          <WarrantyStartDate>2010-04-07</WarrantyStartDate>
+          <GracePeriod>30</GracePeriod>
+          <Global>true</Global>
+          <InstallationIncluded>false</InstallationIncluded>
+          <SitePreparation>false</SitePreparation>
+          <WarrantyExtension>0</WarrantyExtension>
+          <Offer id="ID_2227613_2">
+            <OfferCode>HA151AW</OfferCode>
+            <OfferDescription>Wty: HP HW Maintenance Onsite Support</OfferDescription>
+            <Modifier>
+              <ModName>WTY_HWMON_MATERIAL_HANDLING</ModName>
+              <ModValue>STD</ModValue>
+              <ModDesc>Standard Material Handling</ModDesc>
+            </Modifier>
+            <Modifier>
+              <ModName>WTY_HWMON_GEOGRAPHIC_COVERAGE</ModName>
+              <ModValue>GLB</ModValue>
+              <ModDesc>Global Coverage</ModDesc>
+            </Modifier>
+            <Modifier>
+              <ModName>WTY_HWMON_DEL_RESP_METH_REMOTE</ModName>
+              <ModValue>NA</ModValue>
+              <ModDesc>NextAvail TechResource Remote</ModDesc>
+            </Modifier>
+            <Modifier>
+              <ModName>COV_WINDOW5</ModName>
+              <ModValue>STD</ModValue>
+              <ModDesc>Std Office Hrs Std Office Days</ModDesc>
+            </Modifier>
+            <Modifier>
+              <ModName>WTY_HWMON_DEL_RESP_METH_ONSITE</ModName>
+              <ModValue>NA</ModValue>
+              <ModDesc>NextAvail TechResource Onsite</ModDesc>
+            </Modifier>
+            <Modifier>
+              <ModName>WTY_HWMON_USAGE_LIMITATIONS</ModName>
+              <ModValue>NL</ModValue>
+              <ModDesc>No Usage Limitation</ModDesc>
+            </Modifier>
+            <Modifier>
+              <ModName>RESPONSE_TIME</ModName>
+              <ModValue>NCD</ModValue>
+              <ModDesc>Next Cov Day Onsite Response</ModDesc>
+            </Modifier>
+            <Modifier>
+              <ModName>WTY_HWMON_PARTS_LOGISTICS</ModName>
+              <ModValue>STD</ModValue>
+              <ModDesc>Standard Parts Logistics</ModDesc>
+            </Modifier>
+            <Deliverable>
+              <DelivCode>WTY_HWMON_ONSITE_SUPPORT</DelivCode>
+              <DelivName>Onsite Support</DelivName>
+              <DelivValue>Y</DelivValue>
+            </Deliverable>
+            <Deliverable>
+              <DelivCode>WTY_HWMON_MATERIAL</DelivCode>
+              <DelivName>Parts and Material provided</DelivName>
+              <DelivValue>Y</DelivValue>
+            </Deliverable>
+            <Deliverable>
+              <DelivCode>WTY_HWMON_PROBLEM_DIAGNOSIS</DelivCode>
+              <DelivName>Hardware Problem Diagnosis</DelivName>
+              <DelivValue>Y</DelivValue>
+            </Deliverable>
+            <AppliesTo OOSRef="ID_2227613_1">
+              <StartDate>2010-04-07</StartDate>
+              <EndDate>2013-05-06</EndDate>
+              <Status>A</Status>
+              <ActiveAppliesTo>true</ActiveAppliesTo>
+              <OOSKey>430967328</OOSKey>
+            </AppliesTo>
+          </Offer>
+          <Offer id="ID_2227613_3">
+            <OfferCode>HA158AW</OfferCode>
+            <OfferDescription>Wty: HP Support for Initial Setup</OfferDescription>
+            <Modifier>
+              <ModName>WTY_STS_UNL_DELRESP_REMOTE</ModName>
+              <ModValue>NA</ModValue>
+              <ModDesc>NextAvail TechResource Remote</ModDesc>
+            </Modifier>
+            <Modifier>
+              <ModName>COV_WINDOW5</ModName>
+              <ModValue>STD</ModValue>
+              <ModDesc>Std Office Hrs Std Office Days</ModDesc>
+            </Modifier>
+            <Modifier>
+              <ModName>RESPONSE_TIME</ModName>
+              <ModValue>2HR</ModValue>
+              <ModDesc>2 Hr Remote Response</ModDesc>
+            </Modifier>
+            <Modifier>
+              <ModName>WTY_STS_UNL_NAMED_CALLERS</ModName>
+              <ModValue>UNL</ModValue>
+              <ModDesc>Unlimited Named Callers</ModDesc>
+            </Modifier>
+            <Deliverable>
+              <DelivCode>WTY_STS_UNL_PHONE_SPT</DelivCode>
+              <DelivName>Initial Setup Assistance</DelivName>
+              <DelivValue>Y</DelivValue>
+            </Deliverable>
+            <AppliesTo OOSRef="ID_2227613_1">
+              <StartDate>2010-04-07</StartDate>
+              <EndDate>2010-08-04</EndDate>
+              <Status>X</Status>
+              <ActiveAppliesTo>false</ActiveAppliesTo>
+              <OOSKey>430967328</OOSKey>
+            </AppliesTo>
+          </Offer>
+        </Warranty>
+      </CombinedUnitEntitlement>
+    </EsReply>
+  </Data>
+</ns1:ISEE-GetOOSEntitlementInfoResponse>
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns1:ISEE-GetOOSEntitlementInfoResponse
+        schemaVersion="5.00"
+        xmlns:ns1="http://www.hp.com/schemas/isee/5.00/entitlement">
+        <Data frame="0" serialNumber="CZ10130050">
+                <EIAError xsi:type="EIAError" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                        <TimeStamp>2013-03-04T19:16:28.235</TimeStamp>
+                        <ErrorLevel>FUNCTIONAL</ErrorLevel>
+                        <ErrorID>210</ErrorID>
+                        <ErrorText>Product number was not found: 519841</ErrorText>
+                        <ErrorClass>DataNotFound</ErrorClass>
+                        <DataPayLoad>Source WARRANTY SWOP 2000: Invalid or obsolete product number. [TXID 7543658475]</DataPayLoad>
+                </EIAError>
+        </Data>
+</ns1:ISEE-GetOOSEntitlementInfoResponse>

@@ -1,0 +1,16 @@
+<ns1:ISEE-GetOOSEntitlementInfoResponse xmlns:ns1="http://www.hp.com/schemas/isee/5.00/entitlement" schemaVersion="5.00">
+  <Error frame="0" serialNumber="CZ10130050">
+    <Message>Unable to lookup entitlement status for this request
+            due to missing or incomplete entitlement data. Please add
+            the needed entitlement information and  resubmit the
+            request. The minimum entitlement data must include minimally
+            one of the following sets of system information:  a)
+            CountryCode + SerialNumber + PartNumber or  b) CountryCode +
+            SerialNumber[12 digits long] or  c) CountryCode +
+            EntitlementId + EntitlementType.  The more entitlement data,
+            the more likely entitlement status will be found. Including
+            the serial number, in particular, increases the ability to
+            accurately lookup the entitlement information specific to
+            the request.</Message>
+  </Error>
+</ns1:ISEE-GetOOSEntitlementInfoResponse>
