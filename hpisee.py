@@ -23,10 +23,14 @@
 # http://ocdnix.wordpress.com/
 #
 
+import os
 import sys
 import json
 import requests
 from lxml import etree
+
+BASEDIR = os.path.dirname(os.path.realpath(__file__))
+TEMPLATES = os.path.join(BASEDIR, 'templates')
 
 def reg_timestamp(payload):
     """
@@ -136,7 +140,8 @@ def war_getentdata(soapenv):
             'isee:GetOOSEntitlementList2Result/' \
             'isee:Response',
             namespaces=resnsmap)[0].text
-    print etree.tostring(etree.fromstring(payload), pretty_print=True)
+    pltree = etree.fromstring(payload.encode('utf-8'))
+    print(etree.tostring(pltree, pretty_print=True).decode('utf-8'))
 
 # Keep all config in a large structure.
 config = {
@@ -150,8 +155,8 @@ config = {
             'url': '/ClientRegistration/ClientRegistrationService.asmx',
             'soap_action': '"http://www.hp.com/isee/webservices/'\
                            'RegisterClient2"',
-            'xml_soapenv': 'templates/register_soapenv.xml',
-            'xml_payload': 'templates/register_payload.xml',
+            'xml_soapenv': os.path.join(TEMPLATES, 'register_soapenv.xml'),
+            'xml_payload': os.path.join(TEMPLATES, 'register_payload.xml'),
             'hooks_req_payload': [reg_timestamp],
             'hooks_req_soapenv': [reg_addpayload],
             'hooks_res_soapenv': [reg_getauthdata],
@@ -161,8 +166,8 @@ config = {
             'url': '/EntitlementCheck/EntitlementCheckService.asmx',
             'soap_action': '"http://www.hp.com/isee/webservices/'\
                            'GetOOSEntitlementList2"',
-            'xml_soapenv': 'templates/warranty_soapenv.xml',
-            'xml_payload': 'templates/warranty_payload.xml',
+            'xml_soapenv': os.path.join(TEMPLATES, 'warranty_soapenv.xml'),
+            'xml_payload': os.path.join(TEMPLATES, 'warranty_payload.xml'),
             'hooks_req_payload': [war_populate],
             'hooks_req_soapenv': [war_addpayload],
             'hooks_res_soapenv': [war_getentdata],
@@ -242,23 +247,23 @@ def main():
         authfile = open(config['auth']['file'])
         authfilep = json.load(authfile)
         authfile.close()
-        assert authfilep.has_key('gdid')
-        assert authfilep.has_key('regtoken')
+        assert 'gdid' in authfilep
+        assert 'regtoken' in authfilep
         assert authfilep['gdid']
         assert authfilep['regtoken']
         config['auth']['gdid'] = authfilep['gdid']
         config['auth']['regtoken'] = authfilep['regtoken']
 
-    except:
+    except IOError:
         sys.stderr.write('Registering new client.\n')
         do_request('register')
 
-    config['entitlements'] = map(lambda ent:
-            tuple(ent.split(',')), filter(lambda ent:
-                len(ent.split(',')) == 3, args.entitlements))
+    config['entitlements'] = list(map(lambda ent:
+             tuple(ent.split(',')), filter(lambda ent:
+                len(ent.split(',')) == 3, args.entitlements)))
     assert len(config['entitlements'])
-    assert config['auth'].has_key('gdid')
-    assert config['auth'].has_key('regtoken')
+    assert 'gdid' in config['auth']
+    assert 'regtoken' in config['auth']
     sys.stderr.write('Looking up entitlement info.\n')
     do_request('warranty')
 
