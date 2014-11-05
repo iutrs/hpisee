@@ -88,9 +88,12 @@ def reg_getauthdata(soapenv):
     assert len(regtoken)
     config['auth']['gdid'] = gdid
     config['auth']['regtoken'] = regtoken
-    authfile = open(config['auth']['file'], 'w')
-    json.dump({'gdid': gdid, 'regtoken': regtoken}, authfile, indent=4)
-    authfile.close()
+    try:
+        authfile = open(config['auth']['file'], 'w')
+        json.dump({'gdid': gdid, 'regtoken': regtoken}, authfile, indent=4)
+        authfile.close()
+    except KeyError:
+        return config['auth']  # return auth in-case script imported.
 
 def war_populate(payload):
     """
@@ -141,7 +144,7 @@ def war_getentdata(soapenv):
             'isee:Response',
             namespaces=resnsmap)[0].text
     pltree = etree.fromstring(payload.encode('utf-8'))
-    print(etree.tostring(pltree, pretty_print=True).decode('utf-8'))
+    return pltree
 
 # Keep all config in a large structure.
 config = {
@@ -223,9 +226,11 @@ def do_request(op):
             headers=headers)
 
     # Handle result.
+    results = []
     soapenv = etree.fromstring(r.text.encode('utf-8'))
     for func in config['ops'][op]['hooks_res_soapenv']:
-        func(soapenv)
+        results.append(func(soapenv))
+    return results
 
 def main():
     import argparse
@@ -265,7 +270,8 @@ def main():
     assert 'gdid' in config['auth']
     assert 'regtoken' in config['auth']
     sys.stderr.write('Looking up entitlement info.\n')
-    do_request('warranty')
+    for lookup in do_request('warranty'):
+        print(etree.tostring(lookup, pretty_print=True).decode('utf-8'))
 
 if __name__ == '__main__':
     main()
