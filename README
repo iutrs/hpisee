@@ -9,6 +9,10 @@ The client looks for API auth data in ~/.hpiseeauth. If it's not
 found, it registers with the API and stores the credentials in
 ~/.hpiseeauth for later use and then runs the warranty lookup.
 
+2015-90-15:
+Since the split of HP in two entities, HP & HP Enterprise, hpisee works
+no more for PC computers, but only servers.
+
 OCDnix 2013
 rot13(bpqavk_lnubb.pbz)
 http://ocdnix.wordpress.com/
